@@ -10,7 +10,7 @@ A live demo hosted on Github Pages can be found [here](https://amyxs.github.io/a
  
 ## Project requirments
 
-Vue CLI v3, with it's required version of Node.js
+Vue CLI v2, with it's required version of Node.js
 
 ## Project setup
 
