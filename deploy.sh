@@ -5,7 +5,7 @@
 # abort on errors
 set -e
 
-npm run build
+yarn build
 
 git add dist
 
