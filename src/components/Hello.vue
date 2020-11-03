@@ -1,32 +1,45 @@
 <template>
-  <div class="hello">
-    <b-button variant="success">What to do?</b-button>
+  <div id="hello">
+    <b-button variant="success" v-on:click="getWhatToDo" >What to do?</b-button>
+    <ul>
+      <li v-for="item in items" :key="item.activity">
+        {{ item.activity }}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
+  name: 'Hello',
+  data() {
+    return {
+        items: [
+          { activity: "Do nothing", type: "social", price: "0", participants: 2 }
+        ]
+    };
+    
+  },
+  methods: {
+      getWhatToDo: function () {
+        axios.get(`https://www.boredapi.com/api/activity/`)
+      .then(response => {
+        console.log(response.data)
+        let newItem = {
+          activity: response.data.activity,
+          type: response.data.type,
+          price: response.data.price,
+          participants: response.data.participants
+        }
+        console.log(newItem)
+        this.$data.items.push(newItem)
+      })
+      .catch(e => {
+        this.errors.push(e)
+      })
+    }
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>

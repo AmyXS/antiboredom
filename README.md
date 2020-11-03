@@ -8,11 +8,13 @@ This is a simple web app that showcases the [Bored API](https://www.boredapi.com
 
 A live demo hosted on Github Pages can be found [here](https://amyxs.github.io/antiboredom/)
  
-## Project requirments
+## Development notes
 
-Vue CLI v2, with it's required version of Node.js
+### Project requirments
 
-## Project setup
+Vue CLI v2, with its required version of Node.js
+
+### Project setup
 
 ```
 yarn install
