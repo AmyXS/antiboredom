@@ -1,25 +1,14 @@
 #!/usr/bin/env sh
 
+# Followed this guide https://levelup.gitconnected.com/how-to-deploy-your-vue-app-to-github-pages-897136799e19
+
 # abort on errors
 set -e
 
-# build
 npm run build
 
-# navigate into the build output directory
-cd dist
+git add dist
 
-# if you are deploying to a custom domain
-# echo 'www.example.com' > CNAME
+git commit -m 'Deploy by adding dist subtree'
 
-git init
-git add -A
-git commit -m 'deploy'
-
-# if you are deploying to https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
-
-# if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:AmyXS/antiboredom.git master:gh-pages
-
-cd -
+git subtree push --prefix dist origin gh-pages
