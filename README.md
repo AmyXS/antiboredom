@@ -39,3 +39,13 @@ yarn lint
 ### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Deployment
+
+When ready for deployment, run the deploy.sh script.
+Running the deploy.sh will create a branch called gh-pages, which is a subtree of the main branch. It's used as the build output folder. 
+Github Pages is setup to show the gh-pages branch.
+
+```
+./deploy.sh
+```
