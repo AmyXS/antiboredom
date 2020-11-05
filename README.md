@@ -12,7 +12,9 @@ A live demo hosted on Github Pages can be found [here](https://amyxs.github.io/a
 
 ### Project requirments
 
-Vue CLI v2, with its required version of Node.js
+This project uses Vue2
+
+VueJS 2.6.12, Node.js v12.16.2
 
 ### Project setup
 
