@@ -2,6 +2,8 @@
 
 ## Overview
 
+![Antiboredom logo](./src/assets/logo.svg)
+
 This is a simple web app that showcases the [Bored API](https://www.boredapi.com/)
 
 ## Live demo
