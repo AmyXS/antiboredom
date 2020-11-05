@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <img alt="Antiboredom logo" src="./assets/logo.svg">
     <Hello v-on:signalParentForClicked="onHelloClicked"/>
     <DataView/>
   </div>
