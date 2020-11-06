@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="Antiboredom logo" src="./assets/logo.svg">
     <Hello v-on:signalParentForClicked="onHelloClicked"/>
-    <DataView/>
+    <DataView :items="items"/>
   </div>
 </template>
 
@@ -19,14 +19,20 @@ export default {
   },
   data() {
     return {
-        items: [
-        ]
+        items: [],
+        numTableDataItems: 9
     };
   },
   methods: {
     onHelloClicked() {
-      console.log("hello clicked")
-      this.getWhatToDo()
+      this.getWhatToDoTableData()
+    },
+    getWhatToDoTableData: function () {
+      this.items = [];
+      for (var i = 0; i < this.numTableDataItems; i++) {
+        this.getWhatToDo();
+      }
+
     },
     getWhatToDo: function () {
         axios.get(`https://www.boredapi.com/api/activity/`)
@@ -36,6 +42,7 @@ export default {
           activity: response.data.activity,
           type: response.data.type,
           price: response.data.price,
+          accessibility: response.data.accessibility,
           participants: response.data.participants
         }
         this.$data.items.push(newItem)
