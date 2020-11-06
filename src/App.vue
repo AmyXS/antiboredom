@@ -28,6 +28,7 @@ export default {
       this.getWhatToDoTableData()
     },
     getWhatToDoTableData: function () {
+      this.items = [];
       for (var i = 0; i < this.numTableDataItems; i++) {
         this.getWhatToDo();
       }
@@ -41,6 +42,7 @@ export default {
           activity: response.data.activity,
           type: response.data.type,
           price: response.data.price,
+          accessibility: response.data.accessibility,
           participants: response.data.participants
         }
         this.$data.items.push(newItem)
