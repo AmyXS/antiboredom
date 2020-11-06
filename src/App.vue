@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="Antiboredom logo" src="./assets/logo.svg">
     <Hello v-on:signalParentForClicked="onHelloClicked"/>
-    <DataView/>
+    <DataView :items="items"/>
   </div>
 </template>
 
@@ -19,8 +19,7 @@ export default {
   },
   data() {
     return {
-        items: [
-        ]
+        items: []
     };
   },
   methods: {

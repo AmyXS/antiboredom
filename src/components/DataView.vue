@@ -14,12 +14,7 @@
 
 export default {
   name: 'DataView',
-  data() {
-    return {
-        items: this.$parent.items
-    };
-    
-  },
+  props: ['items'],
   methods: {
     whatElse: function () {
       this.$parent.getWhatToDo()
