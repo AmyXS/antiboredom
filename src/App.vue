@@ -19,13 +19,19 @@ export default {
   },
   data() {
     return {
-        items: []
+        items: [],
+        numTableDataItems: 9
     };
   },
   methods: {
     onHelloClicked() {
-      console.log("hello clicked")
-      this.getWhatToDo()
+      this.getWhatToDoTableData()
+    },
+    getWhatToDoTableData: function () {
+      for (var i = 0; i < this.numTableDataItems; i++) {
+        this.getWhatToDo();
+      }
+
     },
     getWhatToDo: function () {
         axios.get(`https://www.boredapi.com/api/activity/`)
