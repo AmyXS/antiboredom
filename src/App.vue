@@ -2,20 +2,33 @@
   <div id="app">
     <img alt="Antiboredom logo" src="./assets/logo.svg">
     <Hello v-on:signalParentForClicked="onHelloClicked"/>
-    <DataView :items="items"/>
+
+    <b-container>
+      <b-row>
+        <b-col cols="2">
+          <Sidebar/>
+        </b-col>
+        <b-col cols="10">
+         <DataView :items="items"/>
+        </b-col>
+      </b-row>
+    </b-container>
+
   </div>
 </template>
 
 <script>
 import Hello from './components/Hello.vue'
 import DataView from './components/DataView.vue'
+import Sidebar from './components/Sidebar.vue'
 import axios from 'axios';
 
 export default {
   name: 'App',
   components: {
     Hello,
-    DataView
+    DataView,
+    Sidebar
   },
   data() {
     return {
