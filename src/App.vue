@@ -8,7 +8,7 @@
       <Hello v-on:signalParentForClicked="onHelloClicked"/>
     </div>
 
-    <div id="mainPage" v-if="items.length">
+    <div id="mainPage" v-if="items.length" class="mb-5">
       <b-container>
         <b-row>
           <b-col cols="3">

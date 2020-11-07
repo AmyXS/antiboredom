@@ -2,9 +2,8 @@
   <div id="dataview">
 
     <b-container>
-      <b-row>
-        <span v-for="item in filteredItems" :key="item.activity">
-          
+      <b-row align-h="center" class="mb-3">
+        <span v-for="item in filteredItems" :key="item.activity">          
           <b-card
             v-bind:title=item.activity
             v-bind:img-src=getImageURL(item.original_id)
@@ -24,11 +23,14 @@
             </b-card-text>
           </b-card>
         </span>
-
       </b-row>
+      <b-row align-h="center" class="mb-3">
+        <b-button id="whatElseBtn" v-if="items.length" v-on:click="whatElse" >What else?</b-button>
+      </b-row> 
+      
     </b-container>
 
-    <b-button v-if="items.length" v-on:click="whatElse" >What else?</b-button>
+    
   </div>
 </template>
 
@@ -71,3 +73,18 @@ export default {
   }
 }
 </script>
+
+
+<style>
+#whatElseBtn {
+  background-color: #FFC20D;
+  border: none;
+  color: #241B02;
+  padding: 8px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+}
+</style>
