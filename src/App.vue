@@ -9,7 +9,7 @@
           <Sidebar v-on:filterTypeChanged="onFilterTypeChanged" v-on:sortByPriceChanged="onSortByPriceChanged"/>
         </b-col>
         <b-col cols="10">
-         <DataView :items="items"/>
+         <DataView :items="items" :filter_by_type="filter_by_type" :sort_by_price="sort_by_price"/>
         </b-col>
       </b-row>
     </b-container>
@@ -33,6 +33,8 @@ export default {
   data() {
     return {
         items: [],
+        filter_by_type: [],
+        sort_by_price: '',
         numTableDataItems: 9
     };
   },
@@ -41,10 +43,12 @@ export default {
       this.getWhatToDoTableData()
     },
     onFilterTypeChanged(filter_by_type) {
-      console.log(filter_by_type)
+      this.filter_by_type = filter_by_type
+      console.log('Filter by type changed: ' + filter_by_type)
     },
     onSortByPriceChanged(sort_by_price) {
-      console.log(sort_by_price)
+      this.sort_by_price = sort_by_price
+      console.log('Sort by price changed: ' + sort_by_price)
     },
     getWhatToDoTableData: function () {
       this.items = [];

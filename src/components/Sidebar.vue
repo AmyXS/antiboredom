@@ -11,8 +11,6 @@
           :change="filterTypeChanged()"
         ></b-form-checkbox-group>
       </b-form-group>
-      <div class="mt-3">Filter by type: <strong>{{ filter_by_type }}</strong></div>
-   
   </div>
     
     <b-form-group label="Sort by price">
@@ -24,8 +22,6 @@
         :change="sortByPriceChanged()"
       ></b-form-radio-group>
     </b-form-group>
-
-    <div class="mt-3">sort_by_price: <strong>{{ sort_by_price }}</strong></div>
   </div>
 </template>
 

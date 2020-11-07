@@ -3,7 +3,8 @@
 
     <b-container>
       <b-row>
-        <span v-for="(item, index) in items" :key="item.activity">
+        <span v-for="(item, index) in filteredItems" :key="item.activity">
+          
           <b-card
             v-bind:title=item.activity
             v-bind:img-src=getImageURL(index)
@@ -33,7 +34,7 @@
 
 export default {
   name: 'DataView',
-  props: ['items'],
+  props: ['items', 'filter_by_type', 'sort_by_price'],
   methods: {
     whatElse: function () {
       this.$parent.getWhatToDoTableData()
@@ -41,6 +42,17 @@ export default {
     getImageURL: function (index) {
       var url ="https://placedog.net/500/280/?id=5" + index
       return url
+    }
+  },
+  computed: {
+    filteredItems: function () {
+      return this.items.filter(item => {
+          if (this.filter_by_type.includes(item.type)) {
+            return true
+          } else {
+            return false
+          }
+        })
     }
   }
 }
