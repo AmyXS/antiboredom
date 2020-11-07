@@ -1,18 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Antiboredom logo" src="./assets/logo.svg">
-    <Hello v-on:signalParentForClicked="onHelloClicked"/>
+    <div id="logo" class="mb-5">
+      <img alt="Antiboredom logo" src="./assets/logo.svg">
+    </div>
 
-    <b-container>
-      <b-row>
-        <b-col cols="3">
-          <Sidebar v-on:filterTypeChanged="onFilterTypeChanged" v-on:sortByPriceChanged="onSortByPriceChanged"/>
-        </b-col>
-        <b-col cols="9">
-         <DataView :items="items" :filter_by_type="filter_by_type" :sort_by_price="sort_by_price"/>
-        </b-col>
-      </b-row>
-    </b-container>
+    <div id="welcome" v-if="!items.length">
+      <Hello v-on:signalParentForClicked="onHelloClicked"/>
+    </div>
+
+    <div id="mainPage" v-if="items.length">
+      <b-container>
+        <b-row>
+          <b-col cols="3">
+            <Sidebar v-on:filterTypeChanged="onFilterTypeChanged" v-on:sortByPriceChanged="onSortByPriceChanged"/>
+          </b-col>
+          <b-col cols="9">
+          <DataView :items="items" :filter_by_type="filter_by_type" :sort_by_price="sort_by_price"/>
+          </b-col>
+        </b-row>
+      </b-container>
+    </div>
+
 
   </div>
 </template>
@@ -35,7 +43,7 @@ export default {
         items: [],
         filter_by_type: [],
         sort_by_price: '',
-        numTableDataItems: 9
+        numTableDataItems: 8
     };
   },
   methods: {
