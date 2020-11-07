@@ -3,11 +3,11 @@
 
     <b-container>
       <b-row>
-        <span v-for="(item, index) in filteredItems" :key="item.activity">
+        <span v-for="item in filteredItems" :key="item.activity">
           
           <b-card
             v-bind:title=item.activity
-            v-bind:img-src=getImageURL(index)
+            v-bind:img-src=getImageURL(item.original_id)
             img-alt="Image"
             img-top
             style="max-width: 20rem;"
@@ -42,7 +42,7 @@ export default {
       this.$parent.getWhatToDoTableData()
     },
     getImageURL: function (index) {
-      var url ="https://placedog.net/500/280/?id=5" + index
+      var url ="https://placedog.net/500/280/?id=1" + index
       return url
     }
   },

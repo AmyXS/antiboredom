@@ -53,7 +53,7 @@ export default {
     getWhatToDoTableData: function () {
       this.items = [];
       for (var i = 0; i < this.numTableDataItems; i++) {
-        this.getWhatToDo();
+        this.getWhatToDo()
       }
     },
     getWhatToDo: function () {
@@ -65,9 +65,10 @@ export default {
           type: response.data.type,
           price: response.data.price,
           accessibility: response.data.accessibility,
-          participants: response.data.participants
+          participants: response.data.participants,
+          original_id: this.items.length
         }
-        this.$data.items.push(newItem)
+        this.items.push(newItem)
       })
       .catch(e => {
         this.errors.push(e)
