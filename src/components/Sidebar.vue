@@ -15,8 +15,12 @@
   </div>
     
     <b-form-group label="Sort by price">
-      <b-form-radio v-model="sort_by" name="sort-by-price" value="Low to high">Low to high</b-form-radio>
-      <b-form-radio v-model="sort_by" name="sort-by-price" value="High to low">High to low</b-form-radio>
+      <b-form-radio-group
+        id="sort-by-price-radio-group"
+        v-model="sort_by"
+        :options="sort_by_options"
+        name="sort-by-price-options"
+      ></b-form-radio-group>
     </b-form-group>
 
     <div class="mt-3">sort_by: <strong>{{ sort_by }}</strong></div>
@@ -25,9 +29,14 @@
 
 <script>
   export default {
+    props: ['items'],
     data() {
       return {
         sort_by: '',
+        sort_by_options: [
+          { text: 'Low to high', value: 'lowToHigh' },
+          { text: 'High to low', value: 'highToLow' }
+        ],
         filter_by_type: [],
         filter_by_options: [
           { type: 'education', name: 'Education' },
