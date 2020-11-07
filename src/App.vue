@@ -6,7 +6,7 @@
     <b-container>
       <b-row>
         <b-col cols="2">
-          <Sidebar/>
+          <Sidebar v-on:filterTypeChanged="onFilterTypeChanged" v-on:sortByPriceChanged="onSortByPriceChanged"/>
         </b-col>
         <b-col cols="10">
          <DataView :items="items"/>
@@ -40,12 +40,17 @@ export default {
     onHelloClicked() {
       this.getWhatToDoTableData()
     },
+    onFilterTypeChanged(filter_by_type) {
+      console.log(filter_by_type)
+    },
+    onSortByPriceChanged(sort_by_price) {
+      console.log(sort_by_price)
+    },
     getWhatToDoTableData: function () {
       this.items = [];
       for (var i = 0; i < this.numTableDataItems; i++) {
         this.getWhatToDo();
       }
-
     },
     getWhatToDo: function () {
         axios.get(`https://www.boredapi.com/api/activity/`)
