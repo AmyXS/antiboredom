@@ -5,10 +5,10 @@
 
     <b-container>
       <b-row>
-        <b-col cols="2">
+        <b-col cols="3">
           <Sidebar v-on:filterTypeChanged="onFilterTypeChanged" v-on:sortByPriceChanged="onSortByPriceChanged"/>
         </b-col>
-        <b-col cols="10">
+        <b-col cols="9">
          <DataView :items="items" :filter_by_type="filter_by_type" :sort_by_price="sort_by_price"/>
         </b-col>
       </b-row>

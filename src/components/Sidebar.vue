@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <b-form-group label="Filter by type:">
+      <b-form-group label="Filter results by type:">
         <b-form-checkbox-group
           v-model="filter_by_type"
           :options="filter_by_options"
@@ -35,7 +35,7 @@
           { text: 'Low to high', value: 'lowToHigh' },
           { text: 'High to low', value: 'highToLow' }
         ],
-        filter_by_type: [],
+        filter_by_type: ['education','recreational','social','diy','charity','cooking','relaxation','music','busywork'],
         filter_by_options: [
           { type: 'education', name: 'Education' },
           { type: 'recreational', name: 'Recreational' },
@@ -59,4 +59,3 @@
     }
   }
 </script>
-
