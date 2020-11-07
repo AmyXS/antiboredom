@@ -19,6 +19,8 @@
               Accessibility: {{ item.accessibility }} 
               <br/>
               Participants: {{ item.participants }} 
+              <br/>
+              Price: {{ item.price }} 
             </b-card-text>
           </b-card>
         </span>
@@ -46,13 +48,25 @@ export default {
   },
   computed: {
     filteredItems: function () {
-      return this.items.filter(item => {
+      var filtered_list = this.items.filter(item => {
           if (this.filter_by_type.includes(item.type)) {
             return true
           } else {
             return false
           }
         })
+        
+      if (this.sort_by_price === 'lowToHigh') {
+          filtered_list.sort((a, b) => {
+          return a.price - b.price
+        })
+      } else if (this.sort_by_price === 'highToLow') {
+          filtered_list.sort((a, b) => {
+          return b.price - a.price
+        })
+      } 
+
+      return filtered_list
     }
   }
 }
