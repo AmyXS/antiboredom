@@ -11,10 +11,10 @@
     <div id="mainPage" v-if="items.length" class="mb-5">
       <b-container>
         <b-row>
-          <b-col cols="2">
+          <b-col sm="2" class="mb-3">
             <Sidebar v-on:filterTypeChanged="onFilterTypeChanged" v-on:sortByPriceChanged="onSortByPriceChanged"/>
           </b-col>
-          <b-col cols="10">
+          <b-col lg>
           <DataView :items="items" :filter_by_type="filter_by_type" :sort_by_price="sort_by_price"/>
           </b-col>
         </b-row>
