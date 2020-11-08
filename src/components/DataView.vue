@@ -9,7 +9,7 @@
             v-bind:img-src=getImageURL(item.original_id)
             img-alt="Image"
             img-top
-            style="max-width: 16rem;"
+            style="max-width: 16rem; text-align: left;"
             class="mr-2">
             <b-card-text>
               Type: {{ item.type }}
