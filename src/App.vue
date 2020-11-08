@@ -11,10 +11,10 @@
     <div id="mainPage" v-if="items.length" class="mb-5">
       <b-container>
         <b-row>
-          <b-col cols="3">
+          <b-col cols="2">
             <Sidebar v-on:filterTypeChanged="onFilterTypeChanged" v-on:sortByPriceChanged="onSortByPriceChanged"/>
           </b-col>
-          <b-col cols="9">
+          <b-col cols="10">
           <DataView :items="items" :filter_by_type="filter_by_type" :sort_by_price="sort_by_price"/>
           </b-col>
         </b-row>
@@ -43,7 +43,7 @@ export default {
         items: [],
         filter_by_type: [],
         sort_by_price: '',
-        numTableDataItems: 8
+        numTableDataItems: 9
     };
   },
   methods: {

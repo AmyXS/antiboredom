@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div id="sidebar">
     <div id="filter" class="mb-3">
-      <b-form-group label="Filter results by type:">
+      <b-form-group label-class="font-weight-bold" label="Filter by type">
         <b-form-checkbox-group
           v-model="filter_by_type"
           :options="filter_by_options"
@@ -13,7 +13,7 @@
     </div>
 
     <div id="sort">
-      <b-form-group label="Sort by price">
+      <b-form-group label-class="font-weight-bold" label="Sort by price">
         <b-form-radio-group
           id="sort-by-price-radio-group"
           v-model="sort_by_price"
@@ -70,3 +70,16 @@ export default {
   },
 };
 </script>
+
+<style>
+#sidebar {
+  background-color: #FFC20D;
+  border: none;
+  color: #241B02;
+  padding: 20px 40px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+</style>

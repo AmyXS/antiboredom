@@ -2,16 +2,15 @@
   <div id="dataview">
 
     <b-container>
-      <b-row align-h="center" class="mb-3">
-        <span v-for="item in filteredItems" :key="item.activity">          
+      <b-row align-h="center" >
+        <span v-for="item in filteredItems" :key="item.activity" class="mb-3"> 
           <b-card
             v-bind:title=item.activity
             v-bind:img-src=getImageURL(item.original_id)
             img-alt="Image"
             img-top
-            style="max-width: 20rem;"
-            class="mb-2"
-          >
+            style="max-width: 16rem;"
+            class="mr-2">
             <b-card-text>
               Type: {{ item.type }}
               <br/>
@@ -26,8 +25,7 @@
       </b-row>
       <b-row align-h="center" class="mb-3">
         <b-button id="whatElseBtn" v-if="items.length" v-on:click="whatElse" >What else?</b-button>
-      </b-row> 
-      
+      </b-row>
     </b-container>
 
     
