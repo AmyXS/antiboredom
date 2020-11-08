@@ -4,7 +4,12 @@
 
 ![Antiboredom logo](./src/assets/logo.svg)
 
-This is a simple web app that showcases the [Bored API](https://www.boredapi.com/)
+This is a simple web app that shows how to use VueJS to display data from a public REST API.
+The displayed data can be sorted and filtered by the user.
+
+This app uses VueJS and Bootstrap-vue, and the following APIs,
+[The Bored API](https://www.boredapi.com/)
+[Placedog.net](https://placedog.net)
 
 ## Live demo
 
@@ -49,8 +54,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### Deployment
 
 When ready for deployment, run the deploy.sh script.
-Running the deploy.sh will create a branch called gh-pages, which is a subtree of the main branch. It's used as the build output folder. 
-Github Pages is setup to show the gh-pages branch.
+Running the deploy.sh will create a commit on a branch called gh-pages, which is a subtree of the main branch. It's used as the build output folder.
+Github Pages needs to be setup to show the gh-pages branch.
 
 ```
 ./deploy.sh
