@@ -81,5 +81,6 @@ export default {
   text-decoration: none;
   display: inline-block;
   font-size: 18px;
+  border-radius: 4px;
 }
 </style>

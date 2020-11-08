@@ -5,12 +5,13 @@
       <b-row align-h="center" >
         <span v-for="item in filteredItems" :key="item.activity" class="mb-3"> 
           <b-card
+            border-variant="dark"
             v-bind:title=item.activity
             v-bind:img-src=getImageURL(item.original_id)
             img-alt="Image"
             img-top
             style="max-width: 16rem; text-align: left;"
-            class="mr-2">
+            class="mr-3">
             <b-card-text>
               Type: {{ item.type }}
               <br/>
