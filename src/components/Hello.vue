@@ -1,12 +1,12 @@
 <template>
   <div id="body">
     <b-container>
-      <b-row class="text-center" align-v="center">
-        <b-col>
+      <b-row align-v="center">
+        <b-col class="mt-5">
           <div id="text" class="mb-2">
           <p>Dear god, my mate is so bored.. </p>
           </div>
-          <b-button id="helloBtn" variant="success" v-on:click="signalParentForClicked" >What can he do?</b-button>
+          <b-button id="helloBtn" variant="success" v-on:click="signalParentForClicked" >WHAT CAN HE DO?</b-button>
           </b-col>
       </b-row>
     </b-container>
@@ -30,7 +30,7 @@ export default {
   background-color: #FFC20D;
   border: none;
   color: #241B02;
-  padding: 10px 45px;
+  padding: 10px 40px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -38,12 +38,8 @@ export default {
   font-weight: bold;
 }
 #body {
-  position: absolute;
-    top: 400px; /* Header Height */
-    bottom: 0px;
-    width: 100%;
-    color: white;
-    background-color: #241B02;
+  color: white;
+  background-color: #241B02;
 }
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="p-5" >
+  <div id="app" class="p-5" style="min-height:100vh" >
     <div id="logo" class="mb-5">
       <img id="logoImage" alt="Antiboredom logo" src="./assets/logo-dark.svg">
     </div>
@@ -20,7 +20,6 @@
         </b-row>
       </b-container>
     </div>
-
 
   </div>
 </template>

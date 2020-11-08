@@ -24,8 +24,8 @@
           </b-card>
         </span>
       </b-row>
-      <b-row align-h="center" class="mb-3">
-        <b-button id="whatElseBtn" v-if="items.length" v-on:click="whatElse" >What else?</b-button>
+      <b-row align-h="center" class="mt-5">
+        <b-button id="whatElseBtn" v-if="items.length" v-on:click="whatElse" >WHAT ELSE?</b-button>
       </b-row>
     </b-container>
 
@@ -79,7 +79,7 @@ export default {
   background-color: #FFC20D;
   border: none;
   color: #241B02;
-  padding: 8px 30px;
+  padding: 10px 120px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
