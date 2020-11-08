@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div id="app" class="p-5" >
     <div id="logo" class="mb-5">
-      <img alt="Antiboredom logo" src="./assets/logo.svg">
+      <img alt="Antiboredom logo" src="./assets/logo-dark.svg">
     </div>
 
     <div id="welcome" v-if="!items.length">
@@ -94,7 +94,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #241B02;
+  background-color: #241B02;
 }
 </style>

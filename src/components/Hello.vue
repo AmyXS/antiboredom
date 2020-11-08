@@ -42,6 +42,8 @@ export default {
     top: 400px; /* Header Height */
     bottom: 0px;
     width: 100%;
+    color: white;
+    background-color: #241B02;
 }
 
 </style>
