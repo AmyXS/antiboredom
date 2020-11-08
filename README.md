@@ -7,9 +7,7 @@
 This is a simple web app that shows how to use VueJS to display data from a public REST API.
 The displayed data can be sorted and filtered by the user.
 
-This app uses VueJS and Bootstrap-vue, and the following APIs,
-[The Bored API](https://www.boredapi.com/)
-[Placedog.net](https://placedog.net)
+This app uses VueJS and Bootstrap-vue, and the following APIs, [The Bored API](https://www.boredapi.com/), and [Placedog.net](https://placedog.net).
 
 ## Live demo
 
