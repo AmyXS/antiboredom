@@ -3,7 +3,7 @@
     <b-container>
       <b-row align-v="center">
         <b-col class="mt-5">
-          <div id="text" class="mb-2">
+          <div id="text" class="mb-3">
           <p>Dear god, my mate is so bored.. </p>
           </div>
           <b-button id="helloBtn" variant="success" v-on:click="signalParentForClicked" >WHAT CAN HE DO?</b-button>
@@ -30,7 +30,7 @@ export default {
   background-color: #FFC20D;
   border: none;
   color: #241B02;
-  padding: 10px 40px;
+  padding: 10px 60px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
