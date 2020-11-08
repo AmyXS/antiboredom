@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="p-5" >
     <div id="logo" class="mb-5">
-      <img alt="Antiboredom logo" src="./assets/logo-dark.svg">
+      <img id="logoImage" alt="Antiboredom logo" src="./assets/logo-dark.svg">
     </div>
 
     <div id="welcome" v-if="!items.length">
@@ -88,7 +88,10 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bitter:ital@1&display=swap');
-
+#logoImage {
+  max-width: 100%;
+  height: auto;
+}
 #app {
   font-family: 'Bitter', serif;
   -webkit-font-smoothing: antialiased;
