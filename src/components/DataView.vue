@@ -7,7 +7,7 @@
           <b-card
             border-variant="dark"
             v-bind:title=item.activity
-            v-bind:img-src=getImageURL(item.original_id)
+            v-bind:img-src=getImageURL(item.id)
             img-alt="Image"
             img-top
             style="max-width: 16rem; text-align: left;"

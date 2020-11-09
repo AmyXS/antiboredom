@@ -44,43 +44,55 @@ export default {
         items: [],
         filter_by_type: [],
         sort_by_price: '',
-        numTableDataItems: 9
+        numItemsToFetch: 9
     };
   },
   methods: {
     onHelloClicked() {
-      this.getWhatToDoTableData()
+      this.getWhatToDoTableData();
     },
     onFilterTypeChanged(filter_by_type) {
-      this.filter_by_type = filter_by_type
-      console.log('Filter by type changed: ' + filter_by_type)
+      this.filter_by_type = filter_by_type;
+      console.log('Filter by type changed: ' + filter_by_type);
     },
     onSortByPriceChanged(sort_by_price) {
-      this.sort_by_price = sort_by_price
-      console.log('Sort by price changed: ' + sort_by_price)
+      this.sort_by_price = sort_by_price;
+      console.log('Sort by price changed: ' + sort_by_price);
     },
-    getWhatToDoTableData: function () {
+    // Check if item is a duplicate of an existing item
+    // Can't simply use includes() because each item also has an ID
+    itemExists(item) {
+      for (var i = 0; i < this.items.length; i++) {
+        if(item.activity == this.items[i].activity) {
+          return true;
+        }
+      }
+      return false;
+    },
+    getWhatToDoTableData() {
       this.items = [];
-      for (var i = 0; i < this.numTableDataItems; i++) {
-        this.getWhatToDo()
+
+      for (var i = 0; i < this.numItemsToFetch; i++) {
+        this.getWhatToDo();
       }
     },
-    getWhatToDo: function () {
-        axios.get(`https://www.boredapi.com/api/activity/`)
+    getWhatToDo() {
+      axios.get(`https://www.boredapi.com/api/activity/`)
       .then(response => {
-        console.log(response.data)
-        let newItem = {
+        var newItem = {
           activity: response.data.activity,
           type: response.data.type,
           price: response.data.price,
           accessibility: response.data.accessibility,
           participants: response.data.participants,
-          original_id: this.items.length
         }
-        this.items.push(newItem)
+        if (!this.itemExists(newItem)) {
+          newItem["id"] = this.items.length;
+          this.items.push(newItem);
+        }
       })
       .catch(e => {
-        this.errors.push(e)
+        this.errors.push(e);
       })
     }
   }
