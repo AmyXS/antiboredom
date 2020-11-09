@@ -6,7 +6,7 @@
           <div id="text" class="mb-3">
           <p>Dear god, my mate is so bored.. </p>
           </div>
-          <b-button id="helloBtn" variant="success" v-on:click="signalParentForClicked" >WHAT CAN HE DO?</b-button>
+          <b-button id="helloBtn" v-on:click="signalParentForClicked" >WHAT CAN HE DO?</b-button>
           </b-col>
       </b-row>
     </b-container>
