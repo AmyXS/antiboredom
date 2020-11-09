@@ -89,6 +89,9 @@ export default {
         if (!this.itemExists(newItem)) {
           newItem["id"] = this.items.length;
           this.items.push(newItem);
+        } else {
+          // Get a new one if the item already exists
+          this.getWhatToDo();
         }
       })
       .catch(e => {
